@@ -46,10 +46,6 @@ y_prediction = model.predict(X_test)
 print("Accuracy:", metrics.accuracy_score(y_test, y_prediction))
 print("Classification Report RF:\n", classification_report(y_test, y_prediction))
 
-# Model testing on new data
-sample = np.array([[0, 2.9, 1, 78.5, 3.7]])
-model.predict(sample)
-
 # Saving model
 pickle.dump(model, open('predictive-model.pkl', 'wb'))
 
