@@ -40,6 +40,25 @@ class Candidate(BaseModel):
 def home():
     return {'data': "Welcome to the online employee hiring prediction model"}
 
+@app.post("/prediction")
+async def prediction(data: Candidate):
+    sample = [[
+        data.gender,
+        data.bsc,
+        data.workex,
+        data.etest_p,
+        data.msc
+    ]]
+
+    result = model.predict(sample).tolist()[0]
+
+    return {
+        'data': {
+            'prediction': result,
+            'message': 'Candidate can be hired' if result == 1 else 'Candidate cannot be hired'
+        }
+    }
+
 
 # Configure server host and port
 if __name__ == '__main__':
