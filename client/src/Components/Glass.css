@@ -19,17 +19,17 @@
     display: grid;
   }
   
-  .glass__form h4 {
+  .glassForm h4 {
     font-family: sans-serif;
     text-align: center;
     margin: 10px;
   }
   
-  .glass__form__group {
+  .glassFormGroup {
     margin: 10px 0;
   }
   
-  .glass__form__input {
+  .glassFormComponent {
     width: 100%;
     background: transparent;
     outline: none;
@@ -39,11 +39,11 @@
     box-shadow: 5px 5px 5px rgb(0 0 0 / 10%);
   }
   
-  .glass__form__input:focus {
+  .glassFormComponent:focus {
     background: rgba(255, 255, 255, 0.5);
   }
   
-  .glass__form__btn {
+  .glassFormBtn {
     background: #ea2828;
     border: 1px solid #ea2828;
     border: none;
@@ -54,7 +54,7 @@
     cursor: pointer;
   }
   
-  .glass__form__btn:hover {
+  .glassFormBtn:hover {
     background: transparent;
     color: #ea2828;
     transition: all ease-in-out 0.3s;
