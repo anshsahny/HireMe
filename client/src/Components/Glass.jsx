@@ -29,7 +29,16 @@ const Glass = props => {
             let data = response.data.data
             let msg = `Prediction: ${data.prediction}\nMessage: ${data.message}`
             alert(msg)
+            resetValues()
         }).catch((error) => alert(`Error: ${error.message}`))
+    }
+
+    const resetValues = () => {
+        setGender('')
+        setBsc('')
+        setWorkex('')
+        setEtest('')
+        setMsc('')
     }
 
     return (
