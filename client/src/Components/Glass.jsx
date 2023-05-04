@@ -19,10 +19,23 @@ const Glass = props => {
         }).catch((error) => alert(`Error: ${error.message}`))
     }, [])
 
+    const predict = (e) => {
+        e.preventDefault()
+        let params = { gender, bsc, workex, etest, msc }
+        gender === 'Male' ? params.gender = '1' : params.gender = '0'
+        workex === 'Yes' ? params.workex = '1' : params.workex = '0'
+
+        axios.post('http://localhost:8000/prediction', params).then((response) => {
+            let data = response.data.data
+            let msg = `Prediction: ${data.prediction}\nMessage: ${data.message}`
+            alert(msg)
+        }).catch((error) => alert(`Error: ${error.message}`))
+    }
+
     return (
         <div className='glass'>
             <h2 className="mb-5">{welcomeMessage}</h2>
-            <Form onSubmit={(e) => e.preventDefault()} className='glassForm'>
+            <Form onSubmit={(e) => predict(e)} className='glassForm'>
                 <h4>Employment Data</h4>
                 <div className='glassFormGroup'>
                     <Form.Label>Gender</Form.Label>

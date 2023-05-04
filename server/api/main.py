@@ -31,7 +31,7 @@ class Candidate(BaseModel):
     gender: int
     bsc: float
     workex: int
-    etest_p: float
+    etest: float
     msc: float
 
 
@@ -46,7 +46,7 @@ async def prediction(data: Candidate):
         data.gender,
         data.bsc,
         data.workex,
-        data.etest_p,
+        data.etest,
         data.msc
     ]]
 
